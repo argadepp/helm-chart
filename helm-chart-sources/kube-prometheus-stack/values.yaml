@@ -51,8 +51,7 @@ defaultRules:
     kubernetesResources: true
     kubernetesStorage: true
     kubernetesSystem: true
-    kubeSchedulerAlerting: true
-    kubeSchedulerRecording: true
+    kubeScheduler: true
     kubeStateMetrics: true
     network: true
     node: true
@@ -121,10 +120,6 @@ global:
       # seccomp.security.alpha.kubernetes.io/allowedProfileNames: '*'
       # seccomp.security.alpha.kubernetes.io/defaultProfileName: 'docker/default'
       # apparmor.security.beta.kubernetes.io/defaultProfileName: 'runtime/default'
-
-  ## Global image registry to use if it needs to be overriden for some specific use cases (e.g local registries, custom images, ...)
-  ##
-  imageRegistry: ""
 
   ## Reference to one or more secrets to be used when pulling images
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -420,10 +415,6 @@ alertmanager:
     ## scheme: HTTP scheme to use for scraping. Can be used with `tlsConfig` for example if using istio mTLS.
     scheme: ""
 
-    ## enableHttp2: Whether to enable HTTP2.
-    ## See https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#endpoint
-    enableHttp2: true
-
     ## tlsConfig: TLS configuration to use when scraping the endpoint. For example if using istio mTLS.
     ## Of type: https://github.com/coreos/prometheus-operator/blob/main/Documentation/api.md#tlsconfig
     tlsConfig: {}
@@ -461,8 +452,7 @@ alertmanager:
     ## Image of Alertmanager
     ##
     image:
-      registry: quay.io
-      repository: prometheus/alertmanager
+      repository: quay.io/prometheus/alertmanager
       tag: v0.24.0
       sha: ""
 
@@ -696,10 +686,6 @@ alertmanager:
     ## Use case is e.g. spanning an Alertmanager cluster across Kubernetes clusters with a single replica in each.
     forceEnableClusterMode: false
 
-    ## Minimum number of seconds for which a newly created pod should be ready without any of its container crashing for it to
-    ## be considered available. Defaults to 0 (pod will be considered available as soon as it is ready).
-    minReadySeconds: 0
-
   ## ExtraSecret can be used to store various data in an extra secret
   ## (use it for example to store hashed basic auth credentials)
   extraSecret:
@@ -716,6 +702,14 @@ alertmanager:
 grafana:
   enabled: true
   namespaceOverride: ""
+
+  ## Image and version of grafana. If not provided (left commented out) default values from grafana charts will be used.
+  ##
+  # image:
+  #   repository: docker.io/grafana/grafana
+  #   tag: 9.0.6
+  #   sha: ""
+  #   pullPolicy: IfNotPresent
 
   ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
   ##
@@ -744,7 +738,7 @@ grafana:
   ingress:
     ## If true, Grafana Ingress will be created
     ##
-    enabled: true
+    enabled: false
 
     ## IngressClassName for Grafana Ingress.
     ## Should be provided if Ingress is enable.
@@ -764,10 +758,9 @@ grafana:
     ## Hostnames.
     ## Must be provided if Ingress is enable.
     ##
-    # hosts:
-    #   - grafana.domain.com
-    hosts: 
+    hosts:
       - grafana.myeks.techwithpratik.tech
+    #hosts: []
 
     ## Path for grafana ingress
     path: /
@@ -781,6 +774,13 @@ grafana:
     #   - grafana.example.com
 
   sidecar:
+    ## Image and version of sidecar. If not provided (left commented out) default values from grafana charts will be used.
+    ##
+    # image:
+    #   repository: quay.io/kiwigrid/k8s-sidecar
+    #   tag: 1.19.2
+    #   sha: ""
+
     dashboards:
       enabled: true
       label: grafana_dashboard
@@ -1038,8 +1038,7 @@ kubelet:
     ##
     ## metrics_path is required to match upstream rules and charts
     cAdvisorRelabelings:
-      - action: replace
-        sourceLabels: [__metrics_path__]
+      - sourceLabels: [__metrics_path__]
         targetLabel: metrics_path
     # - sourceLabels: [__meta_kubernetes_pod_node_name]
     #   separator: ;
@@ -1052,8 +1051,7 @@ kubelet:
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#relabelconfig
     ##
     probesRelabelings:
-      - action: replace
-        sourceLabels: [__metrics_path__]
+      - sourceLabels: [__metrics_path__]
         targetLabel: metrics_path
     # - sourceLabels: [__meta_kubernetes_pod_node_name]
     #   separator: ;
@@ -1066,8 +1064,7 @@ kubelet:
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#relabelconfig
     ##
     resourceRelabelings:
-      - action: replace
-        sourceLabels: [__metrics_path__]
+      - sourceLabels: [__metrics_path__]
         targetLabel: metrics_path
     # - sourceLabels: [__meta_kubernetes_pod_node_name]
     #   separator: ;
@@ -1096,8 +1093,7 @@ kubelet:
     ##
     ## metrics_path is required to match upstream rules and charts
     relabelings:
-      - action: replace
-        sourceLabels: [__metrics_path__]
+      - sourceLabels: [__metrics_path__]
         targetLabel: metrics_path
     # - sourceLabels: [__meta_kubernetes_pod_node_name]
     #   separator: ;
@@ -1304,8 +1300,8 @@ kubeEtcd:
   ##
   service:
     enabled: true
-    port: 2381
-    targetPort: 2381
+    port: 2379
+    targetPort: 2379
     # selector:
     #   component: etcd
 
@@ -1490,6 +1486,14 @@ kubeStateMetrics:
 ## Configuration for kube-state-metrics subchart
 ##
 kube-state-metrics:
+  ##
+  ##
+  # image:
+  #  repository: registry.k8s.io/kube-state-metrics/kube-state-metrics
+  #  tag: v2.5.0
+  #  sha: ""
+  #  pullPolicy: IfNotPresent
+
   namespaceOverride: ""
   rbac:
     create: true
@@ -1544,12 +1548,18 @@ nodeExporter:
 ## Configuration for prometheus-node-exporter subchart
 ##
 prometheus-node-exporter:
+  ## Image and version of prometheus-node-exporter. If not provided (left commented out) default values from grafana charts will be used.
+  ##
+  # image:
+  #   repository: quay.io/prometheus/node-exporter
+  #   tag: v1.3.1
+  #   pullPolicy: IfNotPresent
+
   namespaceOverride: ""
   podLabels:
     ## Add the 'node-exporter' label to be used by serviceMonitor to match standard common usage in rules and grafana dashboards
     ##
     jobLabel: node-exporter
-  releaseLabel: true
   extraArgs:
     - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($|/)
     - --collector.filesystem.fs-types-exclude=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$
@@ -1626,24 +1636,17 @@ prometheusOperator:
     ## On chart upgrades (or if the secret exists) the cert will not be re-generated. You can use this to provide your own
     ## certs ahead of time if you wish.
     ##
-    annotations: {}
-    #   argocd.argoproj.io/hook: PreSync
-    #   argocd.argoproj.io/hook-delete-policy: HookSucceeded
     patch:
       enabled: true
       image:
-        registry: k8s.gcr.io
-        repository: ingress-nginx/kube-webhook-certgen
-        tag: v1.3.0
+        repository: k8s.gcr.io/ingress-nginx/kube-webhook-certgen
+        tag: v1.2.0
         sha: ""
         pullPolicy: IfNotPresent
       resources: {}
       ## Provide a priority class name to the webhook patching job
       ##
       priorityClassName: ""
-      annotations: {}
-      #   argocd.argoproj.io/hook: PreSync
-      #   argocd.argoproj.io/hook-delete-policy: HookSucceeded
       podAnnotations: {}
       nodeSelector: {}
       affinity: {}
@@ -1703,11 +1706,6 @@ prometheusOperator:
   ##
   # clusterDomain: "cluster.local"
 
-  networkPolicy:
-    ## Enable creation of NetworkPolicy resources.
-    ##
-    enabled: false
-
   ## Service account for Alertmanager to use.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
   ##
@@ -1754,10 +1752,6 @@ prometheusOperator:
     ##
     externalIPs: []
 
-  # ## Labels to add to the operator deployment
-  # ##
-  labels: {}
-
   ## Annotations to add to the operator deployment
   ##
   annotations: {}
@@ -1792,9 +1786,6 @@ prometheusOperator:
   ## Create a servicemonitor for the operator
   ##
   serviceMonitor:
-    ## Labels for ServiceMonitor
-    additionalLabels: {}
-
     ## Scrape interval. If not set, the Prometheus default scrape interval is used.
     ##
     interval: ""
@@ -1884,58 +1875,29 @@ prometheusOperator:
     allowPrivilegeEscalation: false
     readOnlyRootFilesystem: true
 
-  # Enable vertical pod autoscaler support for prometheus-operator
-  verticalPodAutoscaler:
-    enabled: false
-    # List of resources that the vertical pod autoscaler can control. Defaults to cpu and memory
-    controlledResources: []
-
-    # Define the max allowed resources for the pod
-    maxAllowed: {}
-    # cpu: 200m
-    # memory: 100Mi
-    # Define the min allowed resources for the pod
-    minAllowed: {}
-    # cpu: 200m
-    # memory: 100Mi
-
-    updatePolicy:
-      # Specifies whether recommended updates are applied when a Pod is started and whether recommended updates
-      # are applied during the life of a Pod. Possible values are "Off", "Initial", "Recreate", and "Auto".
-      updateMode: Auto
-
   ## Prometheus-operator image
   ##
   image:
-    registry: quay.io
-    repository: prometheus-operator/prometheus-operator
-    tag: v0.60.1
+    repository: quay.io/prometheus-operator/prometheus-operator
+    tag: v0.58.0
     sha: ""
     pullPolicy: IfNotPresent
 
   ## Prometheus image to use for prometheuses managed by the operator
   ##
-  # prometheusDefaultBaseImage: prometheus/prometheus
-
-  ## Prometheus image registry to use for prometheuses managed by the operator
-  ##
-  # prometheusDefaultBaseImageRegistry: quay.io
+  # prometheusDefaultBaseImage: quay.io/prometheus/prometheus
 
   ## Alertmanager image to use for alertmanagers managed by the operator
   ##
-  # alertmanagerDefaultBaseImage: prometheus/alertmanager
-
-  ## Alertmanager image registry to use for alertmanagers managed by the operator
-  ##
-  # alertmanagerDefaultBaseImageRegistry: quay.io
+  # alertmanagerDefaultBaseImage: quay.io/prometheus/alertmanager
 
   ## Prometheus-config-reloader
   ##
   prometheusConfigReloader:
+    # image to use for config and rule reloading
     image:
-      registry: quay.io
-      repository: prometheus-operator/prometheus-config-reloader
-      tag: v0.60.1
+      repository: quay.io/prometheus-operator/prometheus-config-reloader
+      tag: v0.58.0
       sha: ""
 
     # resource config for prometheusConfigReloader
@@ -1950,9 +1912,8 @@ prometheusOperator:
   ## Thanos side-car image when configured
   ##
   thanosImage:
-    registry: quay.io
-    repository: thanos/thanos
-    tag: v0.28.1
+    repository: quay.io/thanos/thanos
+    tag: v0.27.0
     sha: ""
 
   ## Set a Field Selector to filter watched secrets
@@ -2209,7 +2170,7 @@ prometheus:
   #     someoneelse:$apr1$DMZX2Z4q$6SbQIfyuLQd.xmo/P0m2c.
 
   ingress:
-    enabled: true
+    enabled: false
 
     # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
     # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
@@ -2224,10 +2185,9 @@ prometheus:
     ## Hostnames.
     ## Must be provided if Ingress is enabled.
     ##
-    # hosts:
-    #   - prometheus.domain.com
-    hosts: 
+    hosts:
       - prom.myeks.techwithpratik.tech
+    #hosts: []
 
     ## Paths to use for ingress rules - one path should match the prometheusSpec.routePrefix
     ##
@@ -2341,10 +2301,6 @@ prometheus:
     ##
     apiserverConfig: {}
 
-    ## Allows setting additional arguments for the Prometheus container
-    ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#monitoring.coreos.com/v1.Prometheus
-    additionalArgs: []
-
     ## Interval between consecutive scrapes.
     ## Defaults to 30s.
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/release-0.44/pkg/prometheus/promcfg.go#L180-L183
@@ -2389,9 +2345,8 @@ prometheus:
     ## Image of Prometheus.
     ##
     image:
-      registry: quay.io
-      repository: prometheus/prometheus
-      tag: v2.39.1
+      repository: quay.io/prometheus/prometheus
+      tag: v2.37.0
       sha: ""
 
     ## Tolerations for use with node taints
@@ -2931,16 +2886,6 @@ prometheus:
     ## in Prometheus so it may change in any upcoming release.
     allowOverlappingBlocks: false
 
-    ## Minimum number of seconds for which a newly created pod should be ready without any of its container crashing for it to
-    ## be considered available. Defaults to 0 (pod will be considered available as soon as it is ready).
-    minReadySeconds: 0
-
-    # Required for use in managed kubernetes clusters (such as AWS EKS) with custom CNI (such as calico),
-    # because control-plane managed by AWS cannot communicate with pods' IP CIDR and admission webhooks are not working
-    # Use the host's network namespace if true. Make sure to understand the security implications if you want to enable it.
-    # When hostNetwork is enabled, this will set dnsPolicy to ClusterFirstWithHostNet automatically.
-    hostNetwork: false
-
   additionalRulesForClusterRole: []
   #  - apiGroups: [ "" ]
   #    resources:
@@ -3231,9 +3176,8 @@ thanosRuler:
     ## Image of ThanosRuler
     ##
     image:
-      registry: quay.io
-      repository: thanos/thanos
-      tag: v0.28.1
+      repository: quay.io/thanos/thanos
+      tag: v0.27.0
       sha: ""
 
     ## Namespaces to be selected for PrometheusRules discovery.
@@ -3334,14 +3278,6 @@ thanosRuler:
     ## ObjectStorageConfigFile specifies the path of the object storage configuration file.
     ## When used alongside with ObjectStorageConfig, ObjectStorageConfigFile takes precedence.
     objectStorageConfigFile: ""
-
-    ## QueryEndpoints defines Thanos querier endpoints from which to query metrics.
-    ## Maps to the --query flag of thanos ruler.
-    queryEndpoints: []
-
-    ## Define configuration for connecting to thanos query instances. If this is defined, the queryEndpoints field will be ignored.
-    ## Maps to the query.config CLI argument. Only available with thanos v0.11.0 and higher.
-    queryConfig: {}
 
     ## Labels configure the external label pairs to ThanosRuler. A default replica
     ## label `thanos_ruler_replica` will be always added as a label with the value
