@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   helm-chart-test:
   - apiVersion: v1
-    created: "2023-07-05T16:29:04.6170307+05:30"
+    created: "2023-07-05T16:41:09.6280115+05:30"
     description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
@@ -25,7 +25,7 @@ entries:
     - https://argadepp.github.io/helm-chart/helm-chart-test-47.3.0.tgz
     version: 47.3.0
   - apiVersion: v1
-    created: "2023-07-05T16:29:04.589613+05:30"
+    created: "2023-07-05T16:41:09.6041778+05:30"
     description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
@@ -49,7 +49,7 @@ entries:
     version: 42.0.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-05T16:29:04.5658951+05:30"
+    created: "2023-07-05T16:41:09.5798527+05:30"
     description: A Helm chart for Kubernetes
     digest: 1d4dd4a1b8398345369fa5b6e5fbb7c09f89cfd28685c4cfa7500cadac5aaa8b
     name: helm-chart-test
@@ -58,14 +58,35 @@ entries:
     - https://argadepp.github.io/helm-chart/helm-chart-test-0.1.0.tgz
     version: 0.1.0
   kube-prometheus-stack:
-  - apiVersion: v1
-    appVersion: v0.66.0
-    created: "2023-07-05T16:29:04.6404578+05:30"
+  - annotations:
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/prometheus-community/helm-charts
+        - name: Upstream Project
+          url: https://github.com/prometheus-operator/kube-prometheus
+      artifacthub.io/operator: "true"
+    apiVersion: v2
+    appVersion: 0.60.1
+    created: "2023-07-05T16:41:09.653521+05:30"
+    dependencies:
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 4.22.*
+    - condition: nodeExporter.enabled
+      name: prometheus-node-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 4.4.*
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.43.*
     description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
       Prometheus Operator.
-    digest: 362de5dbfc9c58908878e3d72165a2b3833cb756c07b78edf906b4cb1dc2dc4f
+    digest: e7d25c46252de6ef2ea2bf3ecd1ed888dcb0b2ef440d769fe0b7ef405a508ca3
+    home: https://github.com/prometheus-operator/kube-prometheus
     icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
     keywords:
     - operator
@@ -73,12 +94,24 @@ entries:
     - kube-prometheus
     kubeVersion: '>=1.16.0-0'
     maintainers:
-    - email: argadepp@gmail.com
-      name: argadepp
+    - email: andrew@quadcorps.co.uk
+      name: andrewgkew
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: github.gkarthiks@gmail.com
+      name: gkarthiks
+    - email: kube-prometheus-stack@sisti.pt
+      name: GMartinez-Sisti
+    - email: scott@r6by.com
+      name: scottrigby
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    - email: quentin.bisson@gmail.com
+      name: QuentinBisson
     name: kube-prometheus-stack
     sources:
-    - https://prometheus-community.github.io/helm-charts
-    - https://prometheus-operator.github.io/kubernetes-prometheus
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/prometheus-operator/kube-prometheus
     type: application
     urls:
     - https://argadepp.github.io/helm-chart/kube-prometheus-stack-42.0.3.tgz
@@ -86,12 +119,12 @@ entries:
   myhelmchart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-05T16:29:04.641461+05:30"
+    created: "2023-07-05T16:41:09.6540916+05:30"
     description: A Helm chart for Kubernetes
-    digest: 7c073c5c7f406afffc5752f6dae58ca2519bf78d6bb9a8aa54ea6447d28dbd3f
+    digest: ef2ad274bb5dfde0026be908e913bbe218727f165ba7f7fad559705d6010d984
     name: myhelmchart
     type: application
     urls:
     - https://argadepp.github.io/helm-chart/myhelmchart-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-05T16:29:04.5647697+05:30"
+generated: "2023-07-05T16:41:09.5708445+05:30"
