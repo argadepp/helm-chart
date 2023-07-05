@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   helm-chart-test:
   - apiVersion: v1
-    created: "2023-07-05T15:10:45.6164588+05:30"
+    created: "2023-07-05T15:18:13.2638075+05:30"
     description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
@@ -25,7 +25,7 @@ entries:
     - https://github.com/argadepp/helm-chart/helm-chart-test-47.3.0.tgz
     version: 47.3.0
   - apiVersion: v1
-    created: "2023-07-05T15:10:45.589687+05:30"
+    created: "2023-07-05T15:18:13.2408076+05:30"
     description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
@@ -49,12 +49,38 @@ entries:
     version: 42.0.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-05T15:10:45.558307+05:30"
+    created: "2023-07-05T15:18:13.2168145+05:30"
     description: A Helm chart for Kubernetes
-    digest: df4c281f3791a083f1010d62b7a7507ccff9c76414e21458702068ad1bab8d0e
+    digest: 1d4dd4a1b8398345369fa5b6e5fbb7c09f89cfd28685c4cfa7500cadac5aaa8b
     name: helm-chart-test
     type: application
     urls:
     - https://github.com/argadepp/helm-chart/helm-chart-test-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-05T15:10:45.5571851+05:30"
+  kube-prometheus-stack:
+  - apiVersion: v1
+    appVersion: v0.66.0
+    created: "2023-07-05T15:18:13.2854939+05:30"
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
+      and Prometheus rules combined with documentation and scripts to provide easy
+      to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
+      Prometheus Operator.
+    digest: 362de5dbfc9c58908878e3d72165a2b3833cb756c07b78edf906b4cb1dc2dc4f
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: argadepp@gmail.com
+      name: argadepp
+    name: kube-prometheus-stack
+    sources:
+    - https://prometheus-community.github.io/helm-charts
+    - https://prometheus-operator.github.io/kubernetes-prometheus
+    type: application
+    urls:
+    - https://github.com/argadepp/helm-chart/kube-prometheus-stack-42.0.3.tgz
+    version: 42.0.3
+generated: "2023-07-05T15:18:13.2158456+05:30"
