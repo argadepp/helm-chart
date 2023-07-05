@@ -1,14 +1,60 @@
 apiVersion: v1
 entries:
   helm-chart-test:
+  - apiVersion: v1
+    created: "2023-07-05T15:10:45.6164588+05:30"
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
+      and Prometheus rules combined with documentation and scripts to provide easy
+      to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
+      Prometheus Operator.
+    digest: ecd5259cec6b33ec76cf51a38761e9b2ed298f6a85b19f578228b22823a455c7
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    maintainers:
+    - email: argadepp@gmail.com
+      name: argadepp
+    name: helm-chart-test
+    sources:
+    - https://prometheus-community.github.io/helm-charts
+    - https://prometheus-operator.github.io/kubernetes-prometheus
+    type: application
+    urls:
+    - https://github.com/argadepp/helm-chart/helm-chart-test-47.3.0.tgz
+    version: 47.3.0
+  - apiVersion: v1
+    created: "2023-07-05T15:10:45.589687+05:30"
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
+      and Prometheus rules combined with documentation and scripts to provide easy
+      to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
+      Prometheus Operator.
+    digest: 3072479beaf33eb83b0bfceaa880f2970bfcbc3866dacf74e415fcd44b8fc9bc
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    maintainers:
+    - email: argadepp@gmail.com
+      name: argadepp
+    name: helm-chart-test
+    sources:
+    - https://prometheus-community.github.io/helm-charts
+    - https://prometheus-operator.github.io/kubernetes-prometheus
+    type: application
+    urls:
+    - https://github.com/argadepp/helm-chart/helm-chart-test-42.0.3.tgz
+    version: 42.0.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-05T14:39:10.7592472+05:30"
+    created: "2023-07-05T15:10:45.558307+05:30"
     description: A Helm chart for Kubernetes
-    digest: 43214a97209f2ee648271fcdbb3d045e410ee709403693cf4366039573e423ec
+    digest: df4c281f3791a083f1010d62b7a7507ccff9c76414e21458702068ad1bab8d0e
     name: helm-chart-test
     type: application
     urls:
     - https://github.com/argadepp/helm-chart/helm-chart-test-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-05T14:39:10.758162+05:30"
+generated: "2023-07-05T15:10:45.5571851+05:30"
