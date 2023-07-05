@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   helm-chart-test:
   - apiVersion: v1
-    created: "2023-07-05T17:07:47.062524+05:30"
+    created: "2023-07-05T17:17:12.0818502+05:30"
     description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
@@ -25,7 +25,7 @@ entries:
     - https://argadepp.github.io/helm-chart/helm-chart-test-47.3.0.tgz
     version: 47.3.0
   - apiVersion: v1
-    created: "2023-07-05T17:07:47.0389711+05:30"
+    created: "2023-07-05T17:17:12.055416+05:30"
     description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
@@ -49,7 +49,7 @@ entries:
     version: 42.0.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-05T17:07:47.015125+05:30"
+    created: "2023-07-05T17:17:12.0303352+05:30"
     description: A Helm chart for Kubernetes
     digest: 1d4dd4a1b8398345369fa5b6e5fbb7c09f89cfd28685c4cfa7500cadac5aaa8b
     name: helm-chart-test
@@ -67,7 +67,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.60.1
-    created: "2023-07-05T17:07:47.1122152+05:30"
+    created: "2023-07-05T17:17:12.1423922+05:30"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -125,7 +125,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.58.0
-    created: "2023-07-05T17:07:47.0871256+05:30"
+    created: "2023-07-05T17:17:12.1167886+05:30"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -143,7 +143,7 @@ entries:
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
       Prometheus Operator.
-    digest: fc5324025296dc3eefb4ded578b709f5ef68cb22fe4f237869f7c415352eb84e
+    digest: cf0127558e8bdf549cc2037abfbcf84833baafa029e40277eeb61b74d1cdfae4
     home: https://github.com/prometheus-operator/kube-prometheus
     icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
     keywords:
@@ -177,12 +177,12 @@ entries:
   myhelmchart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-05T17:07:47.1122152+05:30"
+    created: "2023-07-05T17:17:12.1430808+05:30"
     description: A Helm chart for Kubernetes
-    digest: 0ec97afd4ac10e48ed5b257b79c4e1c03976f6a1e27aacda5f9d52fb53f63c6f
+    digest: a2fccb993a0341af5ba57c19ce9c0b3e33a565b0dc0551fa876e72abc1291ecc
     name: myhelmchart
     type: application
     urls:
     - https://argadepp.github.io/helm-chart/myhelmchart-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-05T17:07:47.0145536+05:30"
+generated: "2023-07-05T17:17:12.0291436+05:30"
