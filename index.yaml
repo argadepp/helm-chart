@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   helm-chart-test:
   - apiVersion: v1
-    created: "2023-07-05T17:26:26.456234+05:30"
+    created: "2023-07-06T17:01:33.5695384+05:30"
     description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
@@ -25,7 +25,7 @@ entries:
     - https://argadepp.github.io/helm-chart/helm-chart-test-47.3.0.tgz
     version: 47.3.0
   - apiVersion: v1
-    created: "2023-07-05T17:26:26.4332273+05:30"
+    created: "2023-07-06T17:01:33.547756+05:30"
     description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
@@ -49,7 +49,7 @@ entries:
     version: 42.0.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-05T17:26:26.4099742+05:30"
+    created: "2023-07-06T17:01:33.5223435+05:30"
     description: A Helm chart for Kubernetes
     digest: 1d4dd4a1b8398345369fa5b6e5fbb7c09f89cfd28685c4cfa7500cadac5aaa8b
     name: helm-chart-test
@@ -67,7 +67,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.60.1
-    created: "2023-07-05T17:26:26.5065738+05:30"
+    created: "2023-07-06T17:01:33.6214485+05:30"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -125,7 +125,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.58.0
-    created: "2023-07-05T17:26:26.4824063+05:30"
+    created: "2023-07-06T17:01:33.5952799+05:30"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -143,7 +143,7 @@ entries:
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
       Prometheus Operator.
-    digest: 0dc23dcc30b10232531ad55d6acda083b1194bb33551c1c2527fede27c317b06
+    digest: 60a2d9aefbc52fbee8411e37213b5de0095283592cec4039b5661ea4ddb5a73b
     home: https://github.com/prometheus-operator/kube-prometheus
     icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
     keywords:
@@ -177,12 +177,50 @@ entries:
   myhelmchart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-05T17:26:26.507573+05:30"
+    created: "2023-07-06T17:01:33.6224138+05:30"
     description: A Helm chart for Kubernetes
-    digest: 821a746fa9587ec900d1696dd3ce20bebf9bc4133dbfb1f6c0ea9f429a8309ba
+    digest: 1b44176364ffc6806e152c4aaf6a7bcb1ed682408d1ab8df93fff193be5e568e
     name: myhelmchart
     type: application
     urls:
     - https://argadepp.github.io/helm-chart/myhelmchart-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-05T17:26:26.4087541+05:30"
+  thanos:
+  - annotations:
+      category: Analytics
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 0.30.2
+    created: "2023-07-06T17:01:33.6371635+05:30"
+    dependencies:
+    - condition: minio.enabled
+      name: minio
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Thanos is a highly available metrics system that can be added on
+      top of existing Prometheus deployments, providing a global query view across
+      all Prometheus installations.
+    digest: b165af9a97963dc8aeda8a11c4bca9da235e0cfc51be2714a9e98aae24db4b46
+    home: https://github.com/bitnami/charts/tree/main/bitnami/thanos
+    icon: https://bitnami.com/assets/stacks/thanos/img/thanos-stack-220x234.png
+    keywords:
+    - analytics
+    - monitoring
+    - prometheus
+    - thanos
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: thanos
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/thanos
+    - https://thanos.io
+    urls:
+    - https://argadepp.github.io/helm-chart/thanos-12.0.3.tgz
+    version: 12.0.3
+generated: "2023-07-06T17:01:33.5218109+05:30"
