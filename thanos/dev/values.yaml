@@ -83,7 +83,7 @@ bucketCacheConfig: ""
 ## @param existingObjstoreSecret Secret with Objstore Configuration
 ## Note: This will override objstoreConfig
 ##
-existingObjstoreSecret: ""
+existingObjstoreSecret: "objstore-config"
 ## @param existingObjstoreSecretItems Optional item list for specifying a custom Secret key. If so, path should be objstore.yml
 ##
 existingObjstoreSecretItems: []
@@ -209,7 +209,7 @@ query:
   args: []
   ## @param query.replicaCount Number of Thanos Query replicas to deploy
   ##
-  replicaCount: 4
+  replicaCount: 5
   ## @param query.updateStrategy.type Update strategy type for Thanos Query replicas
   ##
   updateStrategy:
@@ -2134,7 +2134,7 @@ compactor:
 storegateway:
   ## @param storegateway.enabled Enable/disable Thanos Store Gateway component
   ##
-  enabled: false
+  enabled: true
   ## @param storegateway.logLevel Thanos Store Gateway log level
   ##
   logLevel: info
