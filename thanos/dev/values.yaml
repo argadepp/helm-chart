@@ -209,7 +209,7 @@ query:
   args: []
   ## @param query.replicaCount Number of Thanos Query replicas to deploy
   ##
-  replicaCount: 2
+  replicaCount: 4
   ## @param query.updateStrategy.type Update strategy type for Thanos Query replicas
   ##
   updateStrategy:
@@ -2134,7 +2134,7 @@ compactor:
 storegateway:
   ## @param storegateway.enabled Enable/disable Thanos Store Gateway component
   ##
-  enabled: false
+  enabled: true
   ## @param storegateway.logLevel Thanos Store Gateway log level
   ##
   logLevel: info
