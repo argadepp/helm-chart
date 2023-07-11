@@ -28,7 +28,7 @@ jobs:
       uses: act10ns/slack@v1
       with: 
         status: starting
-        channel: '#meetups'
+        channel: '#argocd-pratik'
         message: Starting Build and Deploy...
       if: always()
       
@@ -82,7 +82,7 @@ jobs:
       uses: act10ns/slack@v1
       with: 
         status: starting
-        channel: '#meetups'
+        channel: '#argocd-pratik'
         message: Starting Deployment...
       if: always()
       
@@ -113,6 +113,6 @@ jobs:
       uses: act10ns/slack@v1
       with: 
         status: ${{ job.status }}
-        channel: '#meetups'
+        channel: '#argocd-pratik'
         message: Deployed {{ env.GITHUB_REF_NAME }} branch Successfully
       if: always()   
