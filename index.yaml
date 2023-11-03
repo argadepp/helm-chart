@@ -10,7 +10,7 @@ entries:
         url: https://argoproj.github.io/argo-helm/pgp_keys.asc
     apiVersion: v2
     appVersion: v2.7.7
-    created: "2023-11-03T13:51:43.695483+05:30"
+    created: "2023-11-03T15:18:43.6448609+05:30"
     dependencies:
     - condition: redis-ha.enabled
       name: redis-ha
@@ -38,7 +38,7 @@ entries:
     version: 5.37.1
   helm-chart-test:
   - apiVersion: v1
-    created: "2023-11-03T13:51:43.8634698+05:30"
+    created: "2023-11-03T15:18:43.71702+05:30"
     description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
@@ -61,7 +61,7 @@ entries:
     - https://argadepp.github.io/helm-chart/helm-chart-test-47.3.0.tgz
     version: 47.3.0
   - apiVersion: v1
-    created: "2023-11-03T13:51:43.8111665+05:30"
+    created: "2023-11-03T15:18:43.6728953+05:30"
     description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
       and Prometheus rules combined with documentation and scripts to provide easy
       to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
@@ -85,7 +85,7 @@ entries:
     version: 42.0.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-11-03T13:51:43.703277+05:30"
+    created: "2023-11-03T15:18:43.6458976+05:30"
     description: A Helm chart for Kubernetes
     digest: 1d4dd4a1b8398345369fa5b6e5fbb7c09f89cfd28685c4cfa7500cadac5aaa8b
     name: helm-chart-test
@@ -103,7 +103,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.60.1
-    created: "2023-11-03T13:51:44.0296971+05:30"
+    created: "2023-11-03T15:18:43.805764+05:30"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -161,7 +161,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.59.2
-    created: "2023-11-03T13:51:44.0015266+05:30"
+    created: "2023-11-03T15:18:43.7754216+05:30"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -219,7 +219,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.58.0
-    created: "2023-11-03T13:51:43.9683895+05:30"
+    created: "2023-11-03T15:18:43.7451995+05:30"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -271,7 +271,7 @@ entries:
   myhelmchart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-11-03T13:51:44.0306997+05:30"
+    created: "2023-11-03T15:18:43.805764+05:30"
     description: A Helm chart for Kubernetes
     digest: 1b44176364ffc6806e152c4aaf6a7bcb1ed682408d1ab8df93fff193be5e568e
     name: myhelmchart
@@ -290,7 +290,48 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 0.32.2
-    created: "2023-11-03T13:51:44.0669921+05:30"
+    created: "2023-11-03T15:18:43.857589+05:30"
+    dependencies:
+    - condition: minio.enabled
+      name: minio
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 12.x.x
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Thanos is a highly available metrics system that can be added on
+      top of existing Prometheus deployments, providing a global query view across
+      all Prometheus installations.
+    digest: 8d7e2322ddc11ab0521cc3e5958b22c7d79adbc9ec89b0f9017279cf9549cc0b
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/thanos/img/thanos-stack-220x234.png
+    keywords:
+    - analytics
+    - monitoring
+    - prometheus
+    - thanos
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: thanos
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/thanos
+    urls:
+    - https://argadepp.github.io/helm-chart/thanos-12.13.4.tgz
+    version: 12.13.4
+  - annotations:
+      category: Analytics
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:11-debian-11-r57
+        - name: thanos
+          image: docker.io/bitnami/thanos:0.32.2-debian-11-r2
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 0.32.2
+    created: "2023-11-03T15:18:43.8374991+05:30"
     dependencies:
     - condition: minio.enabled
       name: minio
@@ -326,7 +367,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 0.31.0
-    created: "2023-11-03T13:51:44.1061989+05:30"
+    created: "2023-11-03T15:18:43.8884691+05:30"
     dependencies:
     - condition: minio.enabled
       name: minio
@@ -362,7 +403,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 0.31.0
-    created: "2023-11-03T13:51:44.0837928+05:30"
+    created: "2023-11-03T15:18:43.878407+05:30"
     dependencies:
     - condition: minio.enabled
       name: minio
@@ -398,7 +439,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 0.30.2
-    created: "2023-11-03T13:51:44.0485328+05:30"
+    created: "2023-11-03T15:18:43.8168196+05:30"
     dependencies:
     - condition: minio.enabled
       name: minio
@@ -430,4 +471,4 @@ entries:
     urls:
     - https://argadepp.github.io/helm-chart/thanos-12.0.3.tgz
     version: 12.0.3
-generated: "2023-11-03T13:51:43.6558219+05:30"
+generated: "2023-11-03T15:18:43.6041215+05:30"
