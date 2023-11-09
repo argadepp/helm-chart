@@ -470,5 +470,5 @@ entries:
     - https://thanos.io
     urls:
     - https://argadepp.github.io/helm-chart/thanos-12.0.3.tgz
-    version: 12.0.3
+    version: 12.8.3
 generated: "2023-11-03T15:18:43.6041215+05:30"
