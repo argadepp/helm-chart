@@ -3,7 +3,7 @@ entries:
   efk-chart:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2025-01-26T17:51:21.631455197+05:30"
+    created: "2025-01-26T18:26:21.433333939+05:30"
     description: A Helm chart for EFK (Elasticsearch , Fluentd , Kibana)
     digest: 3559661c234d8b95738aede3c43f7c03316f71452c035f69cb5268bc0b468c0e
     name: efk-chart
@@ -11,4 +11,36 @@ entries:
     urls:
     - https://argadepp.github.io/helm-chart/efk-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-26T17:51:21.630971319+05:30"
+  rbac-management:
+  - apiVersion: v2
+    appVersion: v1
+    created: "2025-01-26T18:26:21.433798694+05:30"
+    description: A Helm chart for managing RBAC roles and bindings in an EKS cluster
+    digest: 624b0d6719f3bb963aa435723f88a1d7ea4b87254e54c7df2762929c96aee95d
+    name: rbac-management
+    type: application
+    urls:
+    - https://argadepp.github.io/helm-chart/rbac-management-0.1.0.tgz
+    version: 0.1.0
+  sock-shop:
+  - apiVersion: v1
+    appVersion: v1
+    created: "2025-01-26T18:26:21.434931456+05:30"
+    description: A Helm chart for Sock Shop
+    digest: a7f7f6038e5d5f6871dbef73d3564da3e4f42d93952eb6a5cd85a2625b790ecb
+    name: sock-shop
+    urls:
+    - https://argadepp.github.io/helm-chart/sock-shop-0.3.0.tgz
+    version: 0.3.0
+  truedesk:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-01-26T18:26:21.435327719+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 75e7caa3d341b25a235bd52004c424afca4096750013341a141648474e762f71
+    name: truedesk
+    type: application
+    urls:
+    - https://argadepp.github.io/helm-chart/truedesk-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-01-26T18:26:21.432620286+05:30"
