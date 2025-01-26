@@ -3,7 +3,7 @@ entries:
   efk-chart:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2025-01-26T18:26:21.433333939+05:30"
+    created: "2025-01-26T18:33:03.176108774+05:30"
     description: A Helm chart for EFK (Elasticsearch , Fluentd , Kibana)
     digest: 3559661c234d8b95738aede3c43f7c03316f71452c035f69cb5268bc0b468c0e
     name: efk-chart
@@ -11,10 +11,43 @@ entries:
     urls:
     - https://argadepp.github.io/helm-chart/efk-chart-0.1.0.tgz
     version: 0.1.0
+  grafana-dashboard:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-01-26T18:33:03.176303811+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 8c6575c970aaafe1757238522a19b91abae0a780188033dff6113bcf70d9d44c
+    name: grafana-dashboard
+    type: application
+    urls:
+    - https://argadepp.github.io/helm-chart/grafana-dashboard-0.1.0.tgz
+    version: 0.1.0
+  grafana-ds:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-01-26T18:33:03.176532841+05:30"
+    description: A Helm chart for Kubernetes
+    digest: e5be21c51883b3319c5555e1c9b38e561521234f2e9a82f1c7780c8af6b3b233
+    name: grafana-ds
+    type: application
+    urls:
+    - https://argadepp.github.io/helm-chart/grafana-ds-0.1.0.tgz
+    version: 0.1.0
+  monitoring:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-01-26T18:33:03.176862167+05:30"
+    description: A Helm chart for monitoring tools which are listed below
+    digest: b6ca161f3d91e66d42cbf5d090e576eb2e51b8323db4756a736d00bce1ae9763
+    name: monitoring
+    type: application
+    urls:
+    - https://argadepp.github.io/helm-chart/monitoring-0.1.0.tgz
+    version: 0.1.0
   rbac-management:
   - apiVersion: v2
     appVersion: v1
-    created: "2025-01-26T18:26:21.433798694+05:30"
+    created: "2025-01-26T18:33:03.177046606+05:30"
     description: A Helm chart for managing RBAC roles and bindings in an EKS cluster
     digest: 624b0d6719f3bb963aa435723f88a1d7ea4b87254e54c7df2762929c96aee95d
     name: rbac-management
@@ -25,7 +58,7 @@ entries:
   sock-shop:
   - apiVersion: v1
     appVersion: v1
-    created: "2025-01-26T18:26:21.434931456+05:30"
+    created: "2025-01-26T18:33:03.178147177+05:30"
     description: A Helm chart for Sock Shop
     digest: a7f7f6038e5d5f6871dbef73d3564da3e4f42d93952eb6a5cd85a2625b790ecb
     name: sock-shop
@@ -35,7 +68,7 @@ entries:
   truedesk:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-01-26T18:26:21.435327719+05:30"
+    created: "2025-01-26T18:33:03.179322904+05:30"
     description: A Helm chart for Kubernetes
     digest: 75e7caa3d341b25a235bd52004c424afca4096750013341a141648474e762f71
     name: truedesk
@@ -43,4 +76,4 @@ entries:
     urls:
     - https://argadepp.github.io/helm-chart/truedesk-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-26T18:26:21.432620286+05:30"
+generated: "2025-01-26T18:33:03.175733259+05:30"
