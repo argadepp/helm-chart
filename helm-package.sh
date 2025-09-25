@@ -10,7 +10,7 @@ cd charts
 CHART_NAME=$1
 HELM_REPO_DIR=../ # <-- Change this to your Git repo path
 GIT_BRANCH="master"                                  # <-- Change if using a different branch
-HELM_REPO_URL="https://argadepp.github.io/helm-charts" # <-- Update this
+HELM_REPO_URL="https://argadepp.github.io/helm-chart" # <-- Update this
 
 echo "Packaging Helm chart: $CHART_NAME"
 helm package $CHART_NAME
