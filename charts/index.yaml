@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  ns-deploy:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-09-25T17:40:54.345461147+05:30"
+    description: A Helm chart for Kubernetes to create namespaces with lables
+    digest: 533f58796ba71e0e9823c5ff34ae9a4e267eac0df85efa77cd55129f99f1c8c4
+    name: ns-deploy
+    type: application
+    urls:
+    - https://argadepp.github.io/helm-charts/ns-deploy-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-09-25T17:40:54.341884857+05:30"

@@ -1,0 +1,15 @@
+namespaces:
+  - name: dev
+    labels:
+      environment: dev
+      team: alpha
+
+  - name: staging
+    labels:
+      environment: staging
+      team: beta
+
+  - name: prod
+    labels:
+      environment: prod
+      team: gamma
