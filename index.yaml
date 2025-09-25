@@ -63,7 +63,7 @@ entries:
     name: ns-deploy
     type: application
     urls:
-    - https://argadepp.github.io/helm-chart/charts/ns-deploy-0.1.0.tgz
+    - https://argadepp.github.io/helm-chart/chart/ns-deploy-0.1.0.tgz
     version: 0.1.0
   rbac-management:
   - apiVersion: v2
