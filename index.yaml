@@ -3,7 +3,7 @@ entries:
   efk-chart:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2025-09-26T16:37:47.933612603+05:30"
+    created: "2025-09-26T16:41:12.630274919+05:30"
     description: A Helm chart for EFK (Elasticsearch , Fluentd , Kibana)
     digest: 3559661c234d8b95738aede3c43f7c03316f71452c035f69cb5268bc0b468c0e
     name: efk-chart
@@ -14,7 +14,7 @@ entries:
   grafana-dashboard:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-09-26T16:37:47.934334502+05:30"
+    created: "2025-09-26T16:41:12.630487541+05:30"
     description: A Helm chart for Kubernetes
     digest: 8c6575c970aaafe1757238522a19b91abae0a780188033dff6113bcf70d9d44c
     name: grafana-dashboard
@@ -25,7 +25,7 @@ entries:
   grafana-ds:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-09-26T16:37:47.935302594+05:30"
+    created: "2025-09-26T16:41:12.630786968+05:30"
     description: A Helm chart for Kubernetes
     digest: e5be21c51883b3319c5555e1c9b38e561521234f2e9a82f1c7780c8af6b3b233
     name: grafana-ds
@@ -36,7 +36,7 @@ entries:
   monitoring:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-09-26T16:37:47.936791585+05:30"
+    created: "2025-09-26T16:41:12.63122755+05:30"
     description: A Helm chart for monitoring tools which are listed below
     digest: b6ca161f3d91e66d42cbf5d090e576eb2e51b8323db4756a736d00bce1ae9763
     name: monitoring
@@ -47,7 +47,7 @@ entries:
   ns-deploy:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-09-26T16:37:47.938078109+05:30"
+    created: "2025-09-26T16:41:12.631503073+05:30"
     description: A Helm chart for Kubernetes to create namespaces with lables
     digest: 823dc9a212be4888b485aa35863a0f99aeb80440e95dbb9a8bc5dd343be329b7
     name: ns-deploy
@@ -57,7 +57,7 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-09-26T16:37:47.95466124+05:30"
+    created: "2025-09-26T16:41:12.636152921+05:30"
     description: A Helm chart for Kubernetes to create namespaces with lables
     digest: 823dc9a212be4888b485aa35863a0f99aeb80440e95dbb9a8bc5dd343be329b7
     name: ns-deploy
@@ -68,7 +68,7 @@ entries:
   rbac-m:
   - apiVersion: v2
     appVersion: v1
-    created: "2025-09-26T16:37:47.939638683+05:30"
+    created: "2025-09-26T16:41:12.631751096+05:30"
     description: A Helm chart for managing RBAC roles and bindings in an EKS cluster
     digest: 3750dc4c46345c0b73954e5be3385cbe5aae3de398b3036ff49af63e26b0d5b5
     name: rbac-m
@@ -78,7 +78,7 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: v1
-    created: "2025-09-26T16:37:47.956456444+05:30"
+    created: "2025-09-26T16:41:12.63685739+05:30"
     description: A Helm chart for managing RBAC roles and bindings in an EKS cluster
     digest: 3750dc4c46345c0b73954e5be3385cbe5aae3de398b3036ff49af63e26b0d5b5
     name: rbac-m
@@ -89,7 +89,7 @@ entries:
   rbac-management:
   - apiVersion: v2
     appVersion: v1
-    created: "2025-09-26T16:37:47.95791047+05:30"
+    created: "2025-09-26T16:41:12.637410589+05:30"
     description: A Helm chart for managing RBAC roles and bindings in an EKS cluster
     digest: 12dea9baef174ca7861b146d5120cb5ba63c7a598b491c7b719dcf830c6e4f76
     name: rbac-management
@@ -97,10 +97,31 @@ entries:
     urls:
     - https://argadepp.github.io/helm-chart/charts/rbac-management-0.1.0.tgz
     version: 0.1.0
+  rbac-manager:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-09-26T16:41:12.632041807+05:30"
+    description: A Helm chart for Kubernetes
+    digest: bd38e0c11d2282605e56027c9a4c7d120012b26b0084822f4df3de91dae77533
+    name: rbac-manager
+    type: application
+    urls:
+    - https://argadepp.github.io/helm-chart/rbac-manager-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-09-26T16:41:12.637846532+05:30"
+    description: A Helm chart for Kubernetes
+    digest: bd38e0c11d2282605e56027c9a4c7d120012b26b0084822f4df3de91dae77533
+    name: rbac-manager
+    type: application
+    urls:
+    - https://argadepp.github.io/helm-chart/charts/rbac-manager-0.1.0.tgz
+    version: 0.1.0
   sock-shop:
   - apiVersion: v1
     appVersion: v1
-    created: "2025-09-26T16:37:47.947540465+05:30"
+    created: "2025-09-26T16:41:12.634670354+05:30"
     description: A Helm chart for Sock Shop
     digest: a7f7f6038e5d5f6871dbef73d3564da3e4f42d93952eb6a5cd85a2625b790ecb
     name: sock-shop
@@ -110,7 +131,7 @@ entries:
   truedesk:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-09-26T16:37:47.952498776+05:30"
+    created: "2025-09-26T16:41:12.635387045+05:30"
     description: A Helm chart for Kubernetes
     digest: 75e7caa3d341b25a235bd52004c424afca4096750013341a141648474e762f71
     name: truedesk
@@ -118,4 +139,4 @@ entries:
     urls:
     - https://argadepp.github.io/helm-chart/truedesk-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-26T16:37:47.931250991+05:30"
+generated: "2025-09-26T16:41:12.629782431+05:30"
