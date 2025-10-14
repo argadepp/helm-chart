@@ -18,6 +18,7 @@ spec:
             enabled: true
             hostname: prom.localhost
             ingressClassName: "nginx"
+            path: /prometheus
           remoteWrite:
           - url: http://prom.localhost/push
           remoteRead:

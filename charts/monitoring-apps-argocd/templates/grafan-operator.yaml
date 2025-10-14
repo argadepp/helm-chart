@@ -31,6 +31,7 @@ spec:
           ingress:
             enabled: true
             ingressClassName: "nginx"
+            path: /grafana
             host: {{ .Values.grafanaOperator.ingressHost }}
             path: /
           persistence:
